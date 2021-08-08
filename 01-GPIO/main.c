@@ -8,6 +8,7 @@
 
 
 #define led 17
+#define led2 19
 
 
 
@@ -17,14 +18,18 @@
 int main(void)
 {
   nrf_gpio_cfg_output(led); // Configure the pin as output 
+  nrf_gpio_cfg_output(led2);
 
 
   while(1)
   {
-    nrf_gpio_pin_set(led);// Setiing logic 1 on pin17
+  
+  nrf_gpio_pin_set(led);// Setiing logic 1 on pin17
   nrf_delay_ms(500);
   nrf_gpio_pin_clear(led);// Setting  logic 0 on pin 17
   nrf_delay_ms(500);
+
+  nrf_gpio_pin_toggle(led2);// toogle th pin 
 
 
   }
